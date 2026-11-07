@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>দৈনিক রুটিন</title>
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--tx:#1a2332;--mu:#64748b;--bd:#e3e8ef;--ac:#2563eb;--ok:#16a34a;--no:#dc2626;--grad:linear-gradient(135deg,#0f172a,#1e3a8a 70%,#0e7490);--sh:0 1px 3px rgba(15,23,42,.08),0 4px 12px rgba(15,23,42,.05);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131c2e;--tx:#e8edf5;--mu:#94a3b8;--bd:#243049;--ac:#60a5fa;--ok:#22c55e;--no:#f87171;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131c2e;--tx:#e8edf5;--mu:#94a3b8;--bd:#243049;--ac:#60a5fa;--ok:#22c55e;--no:#f87171;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Noto Sans Bengali","Segoe UI",sans-serif;line-height:1.6}
+.hero{background:radial-gradient(circle at 85% 0%,rgba(255,255,255,.12),transparent 45%),var(--grad);color:#fff;padding:20px 16px 56px;border-radius:0 0 28px 28px}
+.hi{display:flex;justify-content:space-between;align-items:center;max-width:640px;margin:0 auto}
+h1{margin:0;font-size:1.6rem}.sub{margin:0;opacity:.9;font-size:.9rem}
+.ring{width:72px;height:72px;border-radius:50%;display:grid;place-items:center}
+.ring span{width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.28);display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.hero input{display:block;max-width:640px;width:100%;margin:14px auto 0;padding:10px 12px;border-radius:12px;border:0;background:rgba(255,255,255,.2);color:#fff;font:inherit;color-scheme:dark}
+nav{display:flex;gap:8px;overflow-x:auto;padding:4px 16px;margin:-30px auto 12px;max-width:640px}
+nav button{flex:none;border:0;border-radius:20px;padding:9px 14px;background:var(--card);color:var(--tx);box-shadow:var(--sh);font:inherit;cursor:pointer;margin:0}
+nav button.on{background:var(--ac);color:#fff}
+main{max-width:640px;margin:0 auto;padding:0 16px 24px}
+h2{font-size:1.05rem;margin:0 0 10px}
+.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:var(--sh)}
+.mu{color:var(--mu);font-size:.88rem}
+.empty{text-align:center;color:var(--mu);padding:28px 8px}
+input[type=text],input[type=month],input[type=email],input[type=password],textarea,.tr input{padding:10px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit}
+input[type=text],input[type=month],input[type=email],input[type=password],textarea{width:100%}[hidden]{display:none!important}#login input{margin-top:8px}#login .sec{margin-left:0}
+button{background:var(--ac);color:#fff;border:0;border-radius:12px;padding:10px 16px;font:inherit;cursor:pointer;margin-top:8px}
+button.sec{background:transparent;color:var(--ac);border:1.5px solid var(--ac);margin-right:8px}
+.it{background:var(--card);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--sh);border-left:5px solid var(--bd)}
+.it.ok{border-left-color:var(--ok)}.it.no{border-left-color:var(--no)}
+.it.ok .ttl{text-decoration:line-through;color:var(--mu)}
+.ttl{font-weight:600}.tm{font-size:.85rem;color:var(--mu)}
+.acts{display:flex;gap:8px;margin-top:10px}
+.acts button{flex:1;margin:0;background:transparent;color:var(--tx);border:1.5px solid var(--bd)}
+.it.ok .b-ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.it.no .b-no{background:var(--no);border-color:var(--no);color:#fff}
+.it textarea{margin-top:10px;min-height:72px}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:var(--ac)}
+.row{padding:10px 0;border-bottom:1px solid var(--bd)}
+.tr{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.tr .x{background:transparent;color:var(--mu);border:1px solid var(--bd);margin:0 0 0 auto;padding:6px 12px}
+.uh{display:flex;align-items:center;gap:10px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.pct{margin-left:auto;font-weight:700;color:var(--ac)}
+.rl{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--bd);margin-top:6px}
+.ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;background:var(--bd);color:var(--mu);flex:none}
+.rl.ok .ic{background:var(--ok);color:#fff}.rl.no .ic{background:var(--no);color:#fff}
+.why{font-size:.88rem;color:var(--no);background:var(--bg);border-radius:8px;padding:4px 8px;margin-top:2px}
+.cal{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.cd{width:32px;height:32px;border-radius:8px;font-size:.75rem;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hi"><div><p class="sub" id="sub">আজকের পরিকল্পনা</p><h1>📋 দৈনিক রুটিন</h1></div><div class="ring" id="ring"><span id="rp">0%</span></div></div>
+  <input type="date" id="date">
+  <div style="max-width:640px;margin:0 auto"><button id="out" hidden type="button" style="background:rgba(255,255,255,.2)">লগআউট</button></div>
+</header>
+<nav id="tabs" hidden>
+  <button data-t="routine" class="on">✅ রুটিন</button>
+  <button data-t="free">🕒 ফ্রি সময়</button>
+  <button data-t="set" class="adm" hidden>✏️ সেট করুন</button>
+  <button data-t="users" class="adm" hidden>👥 অগ্রগতি</button>
+  <button data-t="month" class="adm" hidden>📅 মাস</button>
+  <button data-t="mem" class="adm" hidden>👤 সদস্য</button>
+</nav>
+<main>
+<div id="login" class="card"><h2>🔐 লগইন</h2><input type="text" id="ln" placeholder="আপনার নাম" hidden><input type="email" id="le" placeholder="ইমেইল" autocomplete="username"><input type="password" id="lp" placeholder="পাসওয়ার্ড" autocomplete="current-password"><button id="lb" type="button">লগইন</button><button id="lt" class="sec" type="button">নতুন অ্যাকাউন্ট খুলুন</button><div id="lm" class="why"></div></div>
+<div id="app" hidden>
+  <section class="pane" id="p-routine"><div id="list"><div class="empty">লোড হচ্ছে…</div></div></section>
+  <section class="pane" id="p-free" hidden><div class="card"><h2>🕒 আগামীকাল আমি ফ্রি থাকব</h2><div class="mu" id="tomlbl"></div><div id="frows"></div><button id="fadd" class="sec" type="button">+ সময় যোগ করুন</button><button id="fsave" type="button">সেভ করুন</button><div id="fmsg" class="mu" style="margin-top:8px"></div></div></section>
+  <section class="pane" id="p-set" hidden><div class="card"><h2>✏️ রুটিন সেট করুন</h2><div class="mu">প্রতিটি কাজের নাম ও সময় দিন</div><div id="rows"></div><button id="add" class="sec" type="button">+ কাজ যোগ করুন</button><button id="save" type="button">রুটিন সেভ করুন</button></div></section>
+  <section class="pane" id="p-users" hidden><div id="users"></div></section>
+  <section class="pane" id="p-month" hidden><div class="card"><h2>📅 মাসিক অগ্রগতি</h2><input type="month" id="mon"></div><div id="mout"></div></section>
+<section class="pane" id="p-mem" hidden><div class="card"><h2>👤 সদস্য ও রোল</h2><div class="mu">কাউকে অ্যাডমিন বানাতে বা ফিরিয়ে আনতে বাটন চাপুন</div><div id="mlist"></div></div></section>
+</div></main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+firebase.initializeApp({apiKey:"AIzaSyCypGterQn213K3atysHX6olLgm8XZTv9M",authDomain:"nroutine.firebaseapp.com",projectId:"nroutine",storageBucket:"nroutine.firebasestorage.app",messagingSenderId:"659462715117",appId:"1:659462715117:web:15a2f173bfcd66547e7ee4"});
+const auth=firebase.auth();
+const $=id=>document.getElementById(id),pad=n=>String(n).padStart(2,'0');
+const td=new Date();$('date').value=td.getFullYear()+'-'+pad(td.getMonth()+1)+'-'+pad(td.getDate());
+let db=null,user=null,myId=null,isAdmin=false,items=[],myDays={},myFree={},myNotes={},all=[],allR={},unsubs=[];
+const date=()=>$('date').value;
+const esc=s=>{const d=document.createElement('div');d.textContent=s;return d.innerHTML};
+const norm=x=>typeof x==='string'?{t:x,from:'',to:''}:x;
+const t12=v=>{if(!v)return '';const [h,m]=v.split(':').map(Number);return (h%12||12)+':'+pad(m)+' '+(h<12?'AM':'PM')};
+const tm=it=>it.from&&it.to?t12(it.from)+' – '+t12(it.to):t12(it.from||it.to);
+const slots=v=>Array.isArray(v)?v:(v&&(v.from||v.to)?[v]:[]);
+const tabs=document.querySelectorAll('#tabs button');
+tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.pane').forEach(p=>p.hidden=p.id!=='p-'+b.dataset.t)});
+function ring(p){$('ring').style.background=`conic-gradient(#fff ${p}%,rgba(255,255,255,.25) 0)`;$('rp').textContent=p+'%'}
+function setSub(){try{$('sub').textContent=new Date(date()+'T00:00').toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long'})}catch(e){}}
+async function saveMine(){if(!db||!myId)return;try{await db.collection('progress').doc(myId).set({days:myDays,free:myFree,notes:myNotes})}catch(e){alert('সেভ করা যায়নি, আবার চেষ্টা করুন')}}
+
+function renderList(force){
+  const d=date(),dn=myDays[d]||[],nt=myNotes[d]||{},ae=document.activeElement;
+  if(!force&&ae&&ae.tagName==='TEXTAREA'&&$('list').contains(ae))return;
+  if(!items.length){$('list').innerHTML='<div class="empty">🌿<br>এই তারিখে কোনো রুটিন দেওয়া হয়নি</div>';ring(0);return}
+  $('list').innerHTML=items.map((it,i)=>{const ok=dn.includes(i),no=i in nt;
+    return `<div class="it ${ok?'ok':no?'no':''}" data-i="${i}"><div class="ttl">${esc(it.t)}</div>${tm(it)?`<div class="tm">🕐 ${tm(it)}</div>`:''}<div class="acts"><button class="b-ok" data-a="ok">✓ করেছি</button><button class="b-no" data-a="no">✗ পারিনি</button></div>${no?`<textarea data-r="${i}" placeholder="কেন করতে পারেননি? এখানে লিখুন…">${esc(nt[i]||'')}</textarea>`:''}</div>`}).join('');
+  ring(Math.round(dn.filter(i=>i<items.length).length/items.length*100));
+}
+$('list').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-a]');if(!b)return;
+  if(!myId){alert('সাইন ইন করুন');return}
+  const i=+b.closest('.it').dataset.i,d=date(),dn=new Set(myDays[d]||[]),nt={...(myNotes[d]||{})};
+  if(b.dataset.a==='ok'){if(dn.has(i))dn.delete(i);else{dn.add(i);delete nt[i]}}
+  else{if(i in nt)delete nt[i];else{nt[i]='';dn.delete(i)}}
+  myDays={...myDays,[d]:[...dn].sort((a,c)=>a-c)};myNotes={...myNotes,[d]:nt};
+  renderList(true);saveMine();
+});
+$('list').addEventListener('change',e=>{
+  const t=e.target;if(t.dataset.r===undefined)return;
+  const d=date();myNotes={...myNotes,[d]:{...(myNotes[d]||{}),[t.dataset.r]:t.value.trim()}};saveMine();
+});
+
+function addRow(it){
+  it=it||{};const r=document.createElement('div');r.className='row';
+  r.innerHTML='<input type="text" class="rt" placeholder="কাজের নাম"><div class="tr"><input type="time" class="rf"><span class="mu">থেকে</span><input type="time" class="rto"><button type="button" class="x">✕</button></div>';
+  r.querySelector('.rt').value=it.t||'';r.querySelector('.rf').value=it.from||'';r.querySelector('.rto').value=it.to||'';
+  r.querySelector('.x').onclick=()=>r.remove();$('rows').appendChild(r);
+}
+function buildRows(arr){$('rows').innerHTML='';(arr.length?arr:[{}]).forEach(addRow)}
+$('add').addEventListener('click',()=>addRow({}));
+$('save').addEventListener('click',async()=>{
+  const arr=[...document.querySelectorAll('#rows .row')].map(r=>({t:r.querySelector('.rt').value.trim(),from:r.querySelector('.rf').value,to:r.querySelector('.rto').value})).filter(x=>x.t);
+  try{await db.collection('routines').doc(date()).set({items:arr});$('save').textContent='সেভ হয়েছে ✓';setTimeout(()=>$('save').textContent='রুটিন সেভ করুন',1500)}catch(e){alert('সেভ করা যায়নি')}
+});
+
+function addFree(s){
+  s=s||{};const r=document.createElement('div');r.className='tr fr';
+  r.innerHTML='<input type="time" class="ff"><span class="mu">থেকে</span><input type="time" class="ft"><button type="button" class="x">✕</button>';
+  r.querySelector('.ff').value=s.from||'';r.querySelector('.ft').value=s.to||'';
+  r.querySelector('.x').onclick=()=>r.remove();$('frows').appendChild(r);
+}
+function buildFree(sl){$('frows').innerHTML='';(sl.length?sl:[{}]).forEach(addFree)}
+function tomKey(){const x=new Date();x.setDate(x.getDate()+1);return x.getFullYear()+'-'+pad(x.getMonth()+1)+'-'+pad(x.getDate())}
+function renderFree(){
+  const k=tomKey(),sl=slots(myFree[k]);
+  $('tomlbl').textContent='তারিখ: '+k;
+  if(!$('frows').contains(document.activeElement))buildFree(sl);
+  $('fmsg').textContent=sl.length?'সেভ করা আছে: '+sl.map(tm).join(', '):'';
+}
+$('fadd').addEventListener('click',()=>addFree({}));
+$('fsave').addEventListener('click',async()=>{
+  if(!myId){alert('সাইন ইন করুন');return}
+  const k=tomKey(),sl=[...document.querySelectorAll('#frows .fr')].map(r=>({from:r.querySelector('.ff').value,to:r.querySelector('.ft').value})).filter(x=>x.from||x.to).sort((a,b)=>a.from<b.from?-1:1);
+  if(sl.some(x=>!x.from||!x.to||x.from>=x.to)){alert('শুরু ও শেষের সময় ঠিকভাবে দিন (শেষ সময় শুরুর পরে হতে হবে)');return}
+  const nf={...myFree};if(sl.length)nf[k]=sl;else delete nf[k];
+  myFree=nf;renderFree();await saveMine();
+});
+
+async function renderReport(){
+  if(!isAdmin)return;
+  const d=date();
+  if(!all.length){$('users').innerHTML='<div class="empty">এখনো কেউ কাজ করেনি</div>';return}
+  const names=usersMap;
+  $('users').innerHTML=all.map(s=>{
+    const x=s.data(),dn=(x.days||{})[d]||[],nt=(x.notes||{})[d]||{},fr=slots((x.free||{})[d]);
+    const n=dn.filter(i=>i<items.length).length,p=items.length?Math.round(n/items.length*100):0,nm=(names[s.id]&&names[s.id].name)||'ব্যবহারকারী';
+    return `<div class="card"><div class="uh"><span class="av">${esc(nm.slice(0,1))}</span><div><b>${esc(nm)}</b><div class="mu">${n}/${items.length} সম্পন্ন</div></div><span class="pct">${p}%</span></div><div class="bar"><i style="width:${p}%"></i></div><div class="mu">🕒 ${fr.length?'এই দিন ফ্রি: '+fr.map(tm).join(', '):'এই দিনের ফ্রি সময় দেয়নি'}</div>${items.map((it,i)=>{const ok=dn.includes(i),no=i in nt;return `<div class="rl ${ok?'ok':no?'no':''}"><span class="ic">${ok?'✓':no?'✗':'•'}</span><div><div>${esc(it.t)}</div>${no?`<div class="why">${nt[i]?esc(nt[i]):'কারণ লেখেনি'}</div>`:''}</div></div>`}).join('')}</div>`}).join('');
+}
+
+async function renderMonth(){
+  if(!isAdmin)return;
+  const ym=$('mon').value,days=Object.keys(allR).filter(d=>d.startsWith(ym)&&allR[d]>0).sort();
+  if(!days.length||!all.length){$('mout').innerHTML='<div class="empty">এই মাসের কোনো তথ্য নেই</div>';return}
+  const names=usersMap;
+  $('mout').innerHTML=all.map(s=>{
+    const dd=s.data().days||{};let tot=0,dn=0,full=0;
+    const cells=days.map(d=>{const t=allR[d],n=Math.min(t,(dd[d]||[]).filter(i=>i<t).length),p=n/t;tot+=t;dn+=n;if(n===t)full++;
+      return `<span class="cd" title="${d}: ${n}/${t}" style="${p>0?`background:rgba(34,197,94,${0.2+0.8*p});border-color:transparent`:''}">${+d.slice(8)}</span>`}).join('');
+    const pc=Math.round(dn/tot*100),nm=(names[s.id]&&names[s.id].name)||'ব্যবহারকারী';
+    return `<div class="card"><div class="uh"><span class="av">${esc(nm.slice(0,1))}</span><div><b>${esc(nm)}</b><div class="mu">${days.length} দিনের মধ্যে ${full} দিন পুরো সম্পন্ন</div></div><span class="pct">${pc}%</span></div><div class="bar"><i style="width:${pc}%"></i></div><div class="cal">${cells}</div></div>`}).join('');
+}
+$('mon').addEventListener('change',renderMonth);
+
+function loadRoutine(){
+  unsubs.forEach(u=>u());unsubs=[];
+  if(!db){$('list').innerHTML='<div class="empty">সাইন ইন করে পেজটি খুলুন</div>';return}
+  unsubs.push(db.collection('routines').doc(date()).onSnapshot(s=>{
+    items=((s.exists&&s.data().items)||[]).map(norm);
+    if(isAdmin&&!$('rows').contains(document.activeElement))buildRows(items);
+    renderList();renderReport();
+  }));
+}
+$('date').addEventListener('change',()=>{setSub();loadRoutine();renderList(true);renderReport()});
+setSub();renderFree();
+
+let usersMap={},rawAll=[],au=[],adm=[],first=true;
+const stopAll=()=>{[...au,...adm,...unsubs].forEach(u=>u());au=[];adm=[];unsubs=[]};
+const refilter=()=>{all=rawAll.filter(s=>(usersMap[s.id]||{}).role!=='admin');renderReport();renderMonth();renderMem()};
+function renderMem(){if(!isAdmin)return;$('mlist').innerHTML=Object.entries(usersMap).map(([id,u])=>`<div class="row uh"><span class="av">${esc((u.name||'?').slice(0,1))}</span><div><b>${esc(u.name||'নামহীন')}</b><div class="mu">${esc(u.email||'')} · ${u.role==='admin'?'অ্যাডমিন':'ব্যবহারকারী'}</div></div>${id===myId?'':`<button class="sec" style="margin-left:auto" data-id="${id}" data-role="${u.role==='admin'?'user':'admin'}">${u.role==='admin'?'ব্যবহারকারী করুন':'অ্যাডমিন করুন'}</button>`}</div>`).join('')}
+$('mlist').addEventListener('click',async e=>{const b=e.target.closest('button[data-id]');if(!b)return;try{await db.collection('users').doc(b.dataset.id).update({role:b.dataset.role})}catch(x){alert('রোল বদলানো যায়নি')}});
+function startAdmin(){
+  adm.push(db.collection('users').onSnapshot(q=>{usersMap={};q.docs.forEach(d=>usersMap[d.id]=d.data());refilter()}));
+  adm.push(db.collection('progress').onSnapshot(q=>{rawAll=q.docs;refilter()}));
+  adm.push(db.collection('routines').onSnapshot(q=>{allR={};q.docs.forEach(s=>{allR[s.id]=((s.data().items)||[]).length});renderMonth()}));
+}
+db=firebase.firestore();
+let signup=false;
+$('lt').onclick=()=>{signup=!signup;$('ln').hidden=!signup;$('lb').textContent=signup?'অ্যাকাউন্ট খুলুন':'লগইন';$('lt').textContent=signup?'আগে থেকেই অ্যাকাউন্ট আছে? লগইন':'নতুন অ্যাকাউন্ট খুলুন';$('lm').textContent=''};
+const EM={'auth/invalid-credential':'ইমেইল বা পাসওয়ার্ড ভুল','auth/wrong-password':'ইমেইল বা পাসওয়ার্ড ভুল','auth/user-not-found':'ইমেইল বা পাসওয়ার্ড ভুল','auth/invalid-email':'ইমেইল ঠিক নয়','auth/email-already-in-use':'এই ইমেইলে অ্যাকাউন্ট আছে','auth/weak-password':'পাসওয়ার্ড কমপক্ষে ৬ অক্ষর দিন','auth/network-request-failed':'ইন্টারনেট সংযোগ নেই'};
+$('lb').onclick=async()=>{
+  const em=$('le').value.trim(),pw=$('lp').value,nm=$('ln').value.trim();$('lm').textContent='';
+  if(!em||!pw){$('lm').textContent='ইমেইল ও পাসওয়ার্ড দিন';return}
+  if(signup&&!nm){$('lm').textContent='আপনার নাম দিন';return}
+  try{
+    if(signup){const c=await auth.createUserWithEmailAndPassword(em,pw);await db.collection('users').doc(c.user.uid).set({name:nm,email:em,role:'user'})}
+    else await auth.signInWithEmailAndPassword(em,pw);
+  }catch(e){$('lm').textContent=EM[e.code]||('ব্যর্থ হয়েছে: '+e.code)}
+};
+$('out').onclick=()=>auth.signOut();
+auth.onAuthStateChanged(u=>{
+  stopAll();first=true;isAdmin=false;usersMap={};rawAll=[];all=[];
+  document.querySelectorAll('.adm').forEach(b=>b.hidden=true);
+  if(!u){myId=null;myDays={};myFree={};myNotes={};items=[];$('login').hidden=false;$('app').hidden=true;$('tabs').hidden=true;$('out').hidden=true;$('list').innerHTML='';ring(0);return}
+  myId=u.uid;$('login').hidden=true;$('app').hidden=false;$('tabs').hidden=false;$('out').hidden=false;$('mon').value=date().slice(0,7);
+  au.push(db.collection('progress').doc(myId).onSnapshot(s=>{const x=(s.exists&&s.data())||{};myDays=x.days||{};myFree=x.free||{};myNotes=x.notes||{};renderList();renderFree()}));
+  au.push(db.collection('users').doc(myId).onSnapshot(s=>{
+    const was=isAdmin;isAdmin=!!(s.exists&&s.data().role==='admin');
+    document.querySelectorAll('.adm').forEach(b=>b.hidden=!isAdmin);
+    if(isAdmin&&!was)startAdmin();
+    if(first){first=false;loadRoutine()}
+  }));
+});
+</script>
+</body>
+</html>
