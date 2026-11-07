@@ -73,7 +73,7 @@ button.sec{background:transparent;color:var(--ac);border:1.5px solid var(--ac);m
 <div id="app" hidden>
   <section class="pane" id="p-routine"><div id="list"><div class="empty">লোড হচ্ছে…</div></div></section>
   <section class="pane" id="p-free" hidden><div class="card"><h2>🕒 আগামীকাল আমি ফ্রি থাকব</h2><div class="mu" id="tomlbl"></div><div id="frows"></div><button id="fadd" class="sec" type="button">+ সময় যোগ করুন</button><button id="fsave" type="button">সেভ করুন</button><div id="fmsg" class="mu" style="margin-top:8px"></div></div></section>
-  <section class="pane" id="p-set" hidden><div class="card"><h2>✏️ রুটিন সেট করুন</h2><div class="mu">প্রতিটি কাজের নাম ও সময় দিন</div><div id="rows"></div><button id="add" class="sec" type="button">+ কাজ যোগ করুন</button><button id="save" type="button">রুটিন সেভ করুন</button></div></section>
+  <section class="pane" id="p-set" hidden><div class="card"><h2>✏️ রুটিন সেট করুন</h2><div class="mu">প্রতিটি কাজের নাম ও সময় দিন</div><div id="rows"></div><button id="add" class="sec" type="button">+ কাজ যোগ করুন</button><button id="save" type="button">রুটিন সেভ করুন</button><div style="margin-top:10px"><button id="copyprev" class="sec" type="button">📋 আগের দিনের রুটিন থেকে বেছে নিন</button></div><div id="cmsg" class="mu" style="margin-top:6px"></div><div id="cpick" class="card" style="margin-top:10px;border:1.5px solid var(--ac)" hidden><b id="cpt"></b><div id="cpl"></div><button id="cyes" type="button">নির্বাচিতগুলো নিন</button> <button id="cno" class="sec" type="button">বাতিল</button></div></div></section>
   <section class="pane" id="p-users" hidden><div id="users"></div></section>
   <section class="pane" id="p-month" hidden><div class="card"><h2>📅 মাসিক অগ্রগতি</h2><input type="month" id="mon"></div><div id="mout"></div></section>
 <section class="pane" id="p-mem" hidden><div class="card"><h2>👤 সদস্য ও রোল</h2><div class="mu">কাউকে অ্যাডমিন বানাতে বা ফিরিয়ে আনতে বাটন চাপুন</div><div id="mlist"></div></div></section>
@@ -134,6 +134,27 @@ $('save').addEventListener('click',async()=>{
   try{await db.collection('routines').doc(date()).set({items:arr});$('save').textContent='সেভ হয়েছে ✓';setTimeout(()=>$('save').textContent='রুটিন সেভ করুন',1500)}catch(e){alert('সেভ করা যায়নি')}
 });
 
+const prevKey=()=>{const x=new Date(date()+'T00:00');x.setDate(x.getDate()-1);return x.getFullYear()+'-'+pad(x.getMonth()+1)+'-'+pad(x.getDate())};
+let pickArr=[];
+$('copyprev').addEventListener('click',async()=>{
+  const pk=prevKey();$('cmsg').textContent='';
+  try{
+    const s=await db.collection('routines').doc(pk).get();
+    pickArr=((s.exists&&s.data().items)||[]).map(norm);
+    if(!pickArr.length){alert(pk+' তারিখে কোনো রুটিন নেই');return}
+    $('cpt').textContent=pk+' তারিখের রুটিন: যেগুলো নিতে চান টিক রাখুন';
+    $('cpl').innerHTML=pickArr.map((it,i)=>`<label class="row" style="display:flex;gap:10px;align-items:center"><input type="checkbox" checked data-i="${i}" style="width:20px;height:20px;flex:none"><span>${esc(it.t)}${tm(it)?` <span class="mu">(${tm(it)})</span>`:''}</span></label>`).join('');
+    $('cpick').hidden=false;
+  }catch(e){alert('লোড করা যায়নি')}
+});
+$('cno').addEventListener('click',()=>{$('cpick').hidden=true});
+$('cyes').addEventListener('click',()=>{
+  const sel=[...document.querySelectorAll('#cpl input:checked')].map(c=>pickArr[+c.dataset.i]);
+  if(!sel.length){alert('অন্তত একটি কাজ বেছে নিন');return}
+  if([...document.querySelectorAll('#rows .rt')].some(x=>x.value.trim())&&!confirm('নিচের এডিটরে থাকা বর্তমান কাজগুলো সরিয়ে এগুলো বসবে। চালিয়ে যাবেন?'))return;
+  buildRows(sel);$('cpick').hidden=true;
+  $('cmsg').textContent=sel.length+'টি কাজ নিচে বসানো হয়েছে। চাইলে কাজ বদলান, ✕ দিয়ে বাদ দিন বা "+ কাজ যোগ করুন" দিয়ে নতুন যোগ করুন, তারপর "রুটিন সেভ করুন" চাপুন।';
+});
 function addFree(s){
   s=s||{};const r=document.createElement('div');r.className='tr fr';
   r.innerHTML='<input type="time" class="ff"><span class="mu">থেকে</span><input type="time" class="ft"><button type="button" class="x">✕</button>';
